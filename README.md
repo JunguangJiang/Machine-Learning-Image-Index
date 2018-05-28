@@ -2,10 +2,22 @@
 ## 问题
 - 和第一个大作业相同
 - 实现图片的检索，不用R树
+- 主要依然是两个问题，如何从图像中提取出有效的特征？如何用特征向量进行高效的检索？
+
+## 分工
+- 图像的预处理（图像规模的统一化（是否有最优策略？需查找论文），清洗离群点（可选，需查找论文））（至少2篇）
+- 搭建神经网络，从图像中提取出有效的特征（在这个领域不同的网络的优缺点，需查找论文）（至少3篇）
+- 根据提取出的特征向量，搭建高效的数据检索系统（非R树，最好查找论文，之后在写总结论文的时候会比较专业）
+- 图形界面。可以复用之前C++代码的。也可以使用pyqt，便于在系统整合。
+- 写Latex文档。
+
 
 ## 神奇的网络资源
-- https://github.com/LanceShaw/Normal-Image-Classification
-- https://www.zhihu.com/question/29467370 （上面有一个回答刚好给了5个参考文献）
+- 5字班作业（虽然文档真心不怎么样） https://github.com/LanceShaw/Normal-Image-Classification
+- 相关论文 https://www.zhihu.com/question/29467370
+- 图像领域深度学习的课程视频 https://www.bilibili.com/video/av17204303/?from=search&seid=4749874698172313955
+- pytorch（感觉这个深度学习框架比较好用） https://pytorch.org
+- 数据预处理的一个非常好的学堂在线的课程（不仅仅是数据预处理，还有主成分分析等内容，主要注重理论的理解） http://www.xuetangx.com/courses/course-v1:TsinghuaX+80240372X+sp/courseware/5a39f1e295d8443fb4290e1cdecc9173/
 
 ## 论文阅读
 - DDL：6.5
