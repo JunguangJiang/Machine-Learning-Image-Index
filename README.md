@@ -1,4 +1,16 @@
 # Machine Learning Image Index
+## 改编自TensorFlow/models
+## 使用方法
+- 方法1：在src文件夹下运行init.sh.
+- 方法2：如果方法1有报错，请按照src/delf/README.md的指示进行环境的配置。
+
+## 设计流程
+- 训练分类网络 在ImageIndex 中 python classify_model_train.py
+- 基于分类网络对图像进行粗特征提取  在ImageIndex 中 python classify_model_feature.py
+- 对512维特征进行预处理
+- 基于上述特征进行检索 
+- 对检索到的候选者进行验证，选出验证分数最高的k张图片
+
 ## 问题
 - 和第一个大作业相同
 - 实现图片的检索，不用R树
@@ -13,6 +25,7 @@
 
 
 ## 神奇的网络资源
+- https://arxiv.org/pdf/1604.01325.pdf 这篇文章中提到了数据清洗
 - 5字班作业（虽然文档真心不怎么样） https://github.com/LanceShaw/Normal-Image-Classification
 - 相关论文 https://www.zhihu.com/question/29467370
 - 图像领域深度学习的课程视频 https://www.bilibili.com/video/av17204303/?from=search&seid=4749874698172313955
@@ -24,6 +37,7 @@
 - 至少5篇论文，每篇列出核心想法、这种方法的优点和不足
 - 提出我们的系统设计大致框架和核心想法
 - 4页以内
+- 将引用文献保存到bibtex文件中。如何获取某篇文献的bibtex？到谷歌学术上搜索，即可立刻找到。
 
 ## 结果展示
 - DDL:6.12
