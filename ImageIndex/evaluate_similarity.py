@@ -49,7 +49,7 @@ def evaluate_similarity(locations_1, descriptors_1, locations_2, descriptors_2):
         if indices[i] != num_features_1
     ])
 
-    if len(locations_1_to_use) < 3:
+    if len(locations_1_to_use) < 3 or len(locations_2_to_use) < 3:
         return 3
 
     # Perform geometric verification using RANSAC.
@@ -60,24 +60,13 @@ def evaluate_similarity(locations_1, descriptors_1, locations_2, descriptors_2):
         residual_threshold=20,
         max_trials=1000
     )
-
+    if type(inliers) == type(None):
+        return 3
     tf.logging.info('Found %d inliers' % sum(inliers))
-
     return sum(inliers)
 
+
 if __name__ == '__main__':
-    # features_1_path = "test_features/1.delf"
-    # features_2_path = "test_features/2.delf"
-    # # Read features.
-    # locations_1, _, descriptors_1, _, _ = feature_io.ReadFromFile(
-    #     features_1_path)
-    # num_features_1 = locations_1.shape[0]
-    # tf.logging.info("Loaded image 1's %d features" % num_features_1)
-    # locations_2, _, descriptors_2, _, _ = feature_io.ReadFromFile(
-    #     features_2_path)
-    # num_features_2 = locations_2.shape[0]
-    # tf.logging.info("Loaded image 2's %d features" % num_features_2)
-    # evaluate_similarity(locations_1, descriptors_1, locations_2, descriptors_2)
 
     features_1_path = "test_features/1.delf"
     features_2_path = "test_features/2.delf"

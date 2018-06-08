@@ -37,6 +37,7 @@ class classify_model:
     def __init__(self):
         if os.path.exists(model_path):
             self.model_conv = torch.load(model_path)
+            print("exist model",model_path)
         else:
             self.model_conv = rn.resnet18(pretrained=True)
 
@@ -79,7 +80,7 @@ class classify_model:
 
         i = 0
         for line in image_list_file:
-            image = Image.open(line.strip('\n'))
+            image = Image.open(prefix+line.strip('\n'))
             sample = data_transfroms(image)
             sample = sample.view(-1, 3, 224, 224)
             outputs = self.model_conv(sample)
@@ -107,8 +108,8 @@ class classify_model:
 
 if __name__ == '__main__':
     model = classify_model()
-    # model.get_feature(image_list=image_list, feature=feature, label_feature=label_feature)
-    print(model.get_single_feature(prefix+"image/n01613177_3.JPEG"))
+    model.get_feature(image_list=image_list, feature=feature, label_feature=label_feature)
+    #print(model.get_single_feature(prefix+"image/n01613177_3.JPEG"))
 
 
 

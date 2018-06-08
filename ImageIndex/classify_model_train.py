@@ -39,7 +39,7 @@ data_transfroms = {
     ]),
 }
 
-data_dir = "image"
+data_dir = "../../data/image"
 sub_dirs = ["train","validate"]
 image_datasets = {x:datasets.ImageFolder(os.path.join(data_dir, x), data_transfroms[x])
                   for x in sub_dirs}
