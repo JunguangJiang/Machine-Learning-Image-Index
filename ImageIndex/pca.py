@@ -8,8 +8,9 @@
 import numpy as np
 from sklearn.decomposition import IncrementalPCA
 import pickle
+from ImageIndex import get_prefix
 
-prefix="../../data/"
+prefix=get_prefix()
 input="abstract_features/feature.txt"
 output = "abstract_features/feature_low.txt"
 input_dim = 512

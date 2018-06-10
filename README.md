@@ -1,65 +1,15 @@
 # Machine Learning Image Index
-## 改编自TensorFlow/models
+## 文件夹说明
+- 自TensorFlow/models移植了delf和object_dection
+- 我们的主要工作都在ImageIndex文件夹中
+
+## 系统配置
+- 操作系统： Mac
+- python版本3.6.3
+- python依赖：tensorflow, pytorch0.4.0, sklearn,skimage,matplotlib等。
+
 ## 使用方法
+- 在运行ImageIndex中的代码前请先进行以下步骤。
 - 方法1：在src文件夹下运行init.sh.
 - 方法2：如果方法1有报错，请按照src/delf/README.md的指示进行环境的配置。
-
-## 设计流程
-- 训练分类网络 在ImageIndex 中 python classify_model_train.py
-- 基于分类网络对图像进行粗特征提取  在ImageIndex 中 python classify_model_feature.py
-- 对512维特征进行预处理
-- 基于上述特征进行检索 
-- 对检索到的候选者进行验证，选出验证分数最高的k张图片
-
-## 问题
-- 和第一个大作业相同
-- 实现图片的检索，不用R树
-- 主要依然是两个问题，如何从图像中提取出有效的特征？如何用特征向量进行高效的检索？
-
-## 分工
-- 图像的预处理（图像规模的统一化（是否有最优策略？需查找论文），清洗离群点（可选，需查找论文））（至少2篇）
-- 搭建神经网络，从图像中提取出有效的特征（在这个领域不同的网络的优缺点，需查找论文）（至少3篇）
-- 根据提取出的特征向量，搭建高效的数据检索系统（非R树，最好查找论文，之后在写总结论文的时候会比较专业）
-- 图形界面。可以复用之前C++代码的。也可以使用pyqt，便于在系统整合。
-- 写Latex文档。
-
-
-## 神奇的网络资源
-- https://arxiv.org/pdf/1604.01325.pdf 这篇文章中提到了数据清洗
-- 5字班作业（虽然文档真心不怎么样） https://github.com/LanceShaw/Normal-Image-Classification
-- 相关论文 https://www.zhihu.com/question/29467370
-- 图像领域深度学习的课程视频 https://www.bilibili.com/video/av17204303/?from=search&seid=4749874698172313955
-- pytorch（感觉这个深度学习框架比较好用） https://pytorch.org
-- 数据预处理的一个非常好的学堂在线的课程（不仅仅是数据预处理，还有主成分分析等内容，主要注重理论的理解） http://www.xuetangx.com/courses/course-v1:TsinghuaX+80240372X+sp/courseware/5a39f1e295d8443fb4290e1cdecc9173/
-
-## 论文阅读
-- DDL：6.5
-- 至少5篇论文，每篇列出核心想法、这种方法的优点和不足
-- 提出我们的系统设计大致框架和核心想法
-- 4页以内
-- 将引用文献保存到bibtex文件中。如何获取某篇文献的bibtex？到谷歌学术上搜索，即可立刻找到。
-
-## 结果展示
-- DDL:6.12
-- 设计方法、特点和性能
-
-## 最终论文
-- DDL：6.18
-- 需要使用模板，3页以内
-- 核心想法、主要考虑因素
-- 系统设计、关键技术
-- 主要结果和结论
-- 需要说明采用的技术或者第三方代码
-
-## 提交
-- 查询得到的结果文件
-- 源代码（在readme.md中说明编译环境、操作系统）
-- 可执行文件
-
-## 评分
-- 系统性能、准确度
-- 实现的改进
-- 技术报告
-- 口头报告
-- 程序的用户体验、技术难度、新奇程度
-- 最重要的是查询结果的准确度
+- 此后进入ImageIndex文件夹，按照readme.md中的提示运行代码。

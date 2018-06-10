@@ -6,7 +6,7 @@
 '''
 
 from __future__ import print_function, division
-from __init__ import *
+# from __init__ import *
 
 import torch
 import torch.nn as nn
@@ -14,10 +14,11 @@ from torchvision import datasets, models, transforms
 import os
 import ImageIndex.resnet as rn
 from PIL import Image
+from ImageIndex import get_prefix
 
 model_path = "parameters/classify_model.pt"#存储分类网络
 
-prefix = "../../data/"
+prefix = get_prefix()
 image_list = prefix+"image/imagelist_new.txt"#图片的路径
 feature=prefix+"abstract_features/feature.txt" # 提取出的512维特征存储的文件
 label_feature=prefix+"abstract_features/label_feature.txt"#10维特征存储的文件
@@ -109,7 +110,6 @@ class classify_model:
 if __name__ == '__main__':
     model = classify_model()
     model.get_feature(image_list=image_list, feature=feature, label_feature=label_feature)
-    #print(model.get_single_feature(prefix+"image/n01613177_3.JPEG"))
 
 
 

@@ -54,7 +54,7 @@ def evaluate_similarity(locations_1, descriptors_1, locations_2, descriptors_2):
 
     # Perform geometric verification using RANSAC.
     _, inliers = ransac(
-        (locations_1_to_use, locations_2_to_use),
+        (locations_2_to_use, locations_1_to_use),
         AffineTransform,
         min_samples=3,
         residual_threshold=20,

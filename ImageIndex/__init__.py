@@ -1,4 +1,7 @@
-import sys
-sys.path.append('..')
+# import sys
+# sys.path.append('..')
 
-prefix="../../data/"
+prefix="data/"
+
+def get_prefix():
+    return prefix
